@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { Target, Eye, Lightbulb, Heart } from 'lucide-react';
-import { mockTeamMembers } from '@/mock/data';
+import { Target, Eye, Lightbulb } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -23,22 +22,6 @@ export default function AboutPage() {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-4">{item.icon}</div>
               <h3 className="text-xl font-semibold text-foreground mb-3">{item.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{item.text}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Team */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Meet Our Team</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">The passionate people behind BuildWise who are building the future of construction.</p>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {mockTeamMembers.map((member, i) => (
-            <motion.div key={member.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="rounded-2xl border border-border bg-card p-6 text-center group hover:shadow-soft-md transition-shadow">
-              <img src={member.avatar} alt={member.name} className="h-24 w-24 rounded-full object-cover mx-auto mb-4 ring-4 ring-border group-hover:ring-primary/20 transition-all" />
-              <h3 className="font-semibold text-foreground">{member.name}</h3>
-              <p className="text-sm text-primary font-medium mb-2">{member.role}</p>
-              <p className="text-sm text-muted-foreground">{member.bio}</p>
             </motion.div>
           ))}
         </div>
